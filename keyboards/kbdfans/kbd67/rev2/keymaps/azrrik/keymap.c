@@ -161,7 +161,6 @@ void persistent_default_layer_set(uint16_t default_layer) {
 
 
 // layer-activated RGB underglow
-
 void matrix_scan_user(void) {
 
   #ifdef RGBLIGHT_ENABLE
@@ -171,7 +170,6 @@ void matrix_scan_user(void) {
 
   if (old_layer != new_layer) {
     switch (new_layer) {
-      rgblight_mode_noeeprom(RGBLIGHT_MODE_STATIC_LIGHT);
       case 0:
         rgblight_sethsv_noeeprom_azure();
         break;
@@ -199,9 +197,13 @@ void matrix_scan_user(void) {
 }
 
 void matrix_init_user(void) {
+}
 
+void keyboard_post_init_user(void) {
+  #ifdef RGBLIGHT_ENABLE
+  rgblight_sethsv_noeeprom_azure();
+  #endif //RGBLIGHT_ENABLE
 }
 
 void led_set_user(uint8_t usb_led) {
-
 }
