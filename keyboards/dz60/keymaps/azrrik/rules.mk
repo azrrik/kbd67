@@ -1,0 +1,2 @@
+EXTRAFLAGS += -flto
+BOOTMAGIC_ENABLE = lite
