@@ -64,3 +64,26 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         _______, _______, RGB_TOG, MO(_FN), RGB_RMOD,RGB_MOD, KC_P0,   _______, KC_PDOT, KC_PENT, KC_PENT, MO(_FN), _______, _______, _______
     )
 };
+
+void led_set_user(uint8_t usb_led) {
+    if (usb_led & (1<<USB_LED_CAPS_LOCK)) {
+        capslock_led_on();
+    } else {
+        capslock_led_off();
+    }
+}
+
+// Runs whenever there is a layer state change.
+layer_state_t layer_state_set_user(layer_state_t state) {
+  uint8_t layer = get_highest_layer(state);
+
+  gp100_led_off();
+  //gp103_led_off();
+
+  // turns on gp100 (top left led) for odd layers
+  if (layer & (1<<0)) gp100_led_on();
+  // turns on gp103 (top mid led) for layers 2, 6, ...
+  //if (layer & (1<<1)) gp103_led_on();
+
+  return state;
+}
