@@ -19,3 +19,6 @@
 // place overrides here
 #define NO_ACTION_MACRO
 #define NO_ACTION_FUNCTION
+#define RGBLIGHT_LAYERS
+#define BOOTMAGIC_LITE_ROW 0
+#define BOOTMAGIC_LITE_COLUMN 0

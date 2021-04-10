@@ -1,18 +1,3 @@
-/* Copyright 2018 'mechmerlin'
- *
- * This program is free software: you can redistribute it and/or modify
- * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation, either version 2 of the License, or
- * (at your option) any later version.
- *
- * This program is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- * GNU General Public License for more details.
- *
- * You should have received a copy of the GNU General Public License
- * along with this program.  If not, see <http://www.gnu.org/licenses/>.
- */
 #include QMK_KEYBOARD_H
 
 #define _______ KC_TRNS
@@ -35,9 +20,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     /* base
     * ┌───┬───┬───┬───┬───┬───┬───┬───┬───┬───┬───┬───┬───┬───┬───┬───┐
     * │ ` │ 1 │ 2 │ 3 │ 4 │ 5 │ 6 │ 7 │ 8 │ 9 │ 0 │ - │ = │ins│del│hom|
-    * ├───┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴───┤
-    * │ tab │ q │ w │ e │ r │ t │ y │ u │ i │ o │ p │ [ │ ] │ \ | end │
-    * ├─────┴┬──┴┬──┴┬──┴┬──┴┬──┴┬──┴┬──┴┬──┴┬──┴┬──┴┬──┴┬──┴───┴─┬───┤
+    * ├───┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴───┼───┤
+    * │ tab │ q │ w │ e │ r │ t │ y │ u │ i │ o │ p │ [ │ ] │  \  |end│
+    * ├─────┴┬──┴┬──┴┬──┴┬──┴┬──┴┬──┴┬──┴┬──┴┬──┴┬──┴┬──┴┬──┴─────┼───┤
     * │ caps │ a │ s │ d │ f │ g │ h │ j | k │ l │ ; │ ' │ enter  │pUp|
     * ├────┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴────┬───┼───┤
     * │shif│F12│ z │ x │ c │ v │ b │ n │ m │ , │ . │ / │ shift│ ^ │pDn|
@@ -55,9 +40,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     /* layer 1 - arrows
     * ┌───┬───┬───┬───┬───┬───┬───┬───┬───┬───┬───┬───┬───┬───┬───┬───┐
     * │   │F1 │F2 │F3 │F4 │F5 │F6 │F7 │F8 │F9 │F10│F11│F12│   │   │   │
-    * ├───┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴───┤
-    * │     │   │   │   │   │   │   │hom│ ^ │end│Pup│   │   │   |     │
-    * ├─────┴┬──┴┬──┴┬──┴┬──┴┬──┴┬──┴┬──┴┬──┴┬──┴┬──┴┬──┴┬──┴───┴─┬───┤
+    * ├───┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴───┼───┤
+    * │     │   │   │   │   │   │   │hom│ ^ │end│Pup│   │   │     |   │
+    * ├─────┴┬──┴┬──┴┬──┴┬──┴┬──┴┬──┴┬──┴┬──┴┬──┴┬──┴┬──┴┬──┴─────┼───┤
     * │      │shf│gui│alt│ctl│   │   │ < | v │ > │Pdn│   │        |   │
     * ├────┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴────┬───┼───┤
     * │    │   │und│cut│cpy│pst│   │   │   │   │   │   │      │   |   │
@@ -75,9 +60,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     /* layer 2 - mouse
     * ┌───┬───┬───┬───┬───┬───┬───┬───┬───┬───┬───┬───┬───┬───┬───┬───┐
     * │RST│F1 │F2 │F3 │F4 │F5 │F6 │F7 │F8 │F9 │F10│F11│F12│   │   │   │
-    * ├───┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴───┤
-    * │     │   │   │   │   │   │   │b1 │ ^ │b2 │wUp│   │   │   |     │
-    * ├─────┴┬──┴┬──┴┬──┴┬──┴┬──┴┬──┴┬──┴┬──┴┬──┴┬──┴┬──┴┬──┴───┴─┬───┤
+    * ├───┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴───┼───┤
+    * │     │   │   │   │   │   │   │b1 │ ^ │b2 │wUp│   │   │     |   │
+    * ├─────┴┬──┴┬──┴┬──┴┬──┴┬──┴┬──┴┬──┴┬──┴┬──┴┬──┴┬──┴┬──┴─────┼───┤
     * │      │   │   │   │   │   │   │ < | v │ > │wDn│   │        |   │
     * ├────┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴────┬───┼───┤
     * │    │   │   │   │   │   │   │   │   │   │   │   │      │   |   │
@@ -92,12 +77,12 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,  KC_ACL0,  KC_ACL1,  KC_ACL2,  _______,  _______,  _______,  _______,
         _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______
     ),
-    /* layer 4 - no fn toggle
+    /* layer 3 - no fn toggle
     * ┌───┬───┬───┬───┬───┬───┬───┬───┬───┬───┬───┬───┬───┬───┬───┬───┐
     * │   │   │   │   │   │   │   │   │   │   │   │   │   │   │   │   │
-    * ├───┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴───┤
-    * │     │   │   │   │   │   │   │   │   │   |   │   │   │   |     │
-    * ├─────┴┬──┴┬──┴┬──┴┬──┴┬──┴┬──┴┬──┴┬──┴┬──┴┬──┴┬──┴┬──┴───┴─┬───┤
+    * ├───┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴───┼───┤
+    * │     │   │   │   │   │   │   │   │   │   |   │   │   │     |   │
+    * ├─────┴┬──┴┬──┴┬──┴┬──┴┬──┴┬──┴┬──┴┬──┴┬──┴┬──┴┬──┴┬──┴─────┼───┤
     * │      │   │   │   │   │   │   │   |   │   │   │   │        |   │
     * ├────┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴────┬───┼───┤
     * │    │   │   │   │   │   │   │   │   │   │   │   │      │   |   │
@@ -114,56 +99,57 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     )
 };
 
-void persistent_default_layer_set(uint16_t default_layer) {
-  eeconfig_update_default_layer(default_layer);
-  default_layer_set(default_layer);
-}
-
-
 // layer-activated RGB underglow
-void matrix_scan_user(void) {
-
-  #ifdef RGBLIGHT_ENABLE
-
-  static uint8_t old_layer = 1;
-  uint8_t new_layer = biton32(layer_state);
-
-  if (old_layer != new_layer) {
-    switch (new_layer) {
-      case 0:
-        rgblight_sethsv_noeeprom_azure();
-        break;
-      case 1:
-        rgblight_sethsv_noeeprom_coral();
-        break;
-      case 2:
-        rgblight_sethsv_noeeprom_gold();
-        break;
-      case 3:
-        rgblight_sethsv_noeeprom_purple();
-        break;
-      case 4:
-        rgblight_sethsv_noeeprom_yellow();
-        break;
-      default:
-        rgblight_sethsv_noeeprom_azure();
+const rgblight_segment_t PROGMEM capslock_layer[] = RGBLIGHT_LAYER_SEGMENTS(
+    {11, 4, 0, 255, 255}
+    // {11, 4, 0, 255, 255}
+);
+const rgblight_segment_t PROGMEM layer0[] = RGBLIGHT_LAYER_SEGMENTS(
+    {0, 20, 11, 176, 200}
+);
+const rgblight_segment_t PROGMEM layer1[] = RGBLIGHT_LAYER_SEGMENTS(
+    {0, 20, 128, 255, 200}
+);
+const rgblight_segment_t PROGMEM layer2[] = RGBLIGHT_LAYER_SEGMENTS(
+    {0, 20, 191, 255, 200}
+);
+const rgblight_segment_t PROGMEM layer3[] = RGBLIGHT_LAYER_SEGMENTS(
+    {0, 20, 106, 255, 200}
+);
+const rgblight_segment_t PROGMEM layer4[] = RGBLIGHT_LAYER_SEGMENTS(
+    {0, 20, 43, 255, 200
     }
+);
 
-    old_layer = new_layer;
-  }
-
-  #endif //RGBLIGHT_ENABLE
-
-}
-
-void matrix_init_user(void) {
-}
+// Now define the array of layers. Later layers take precedence
+const rgblight_segment_t* const PROGMEM rgb_layers[] = RGBLIGHT_LAYERS_LIST(
+    layer0,
+    layer1,
+    layer2,
+    layer3,
+    layer4,
+    capslock_layer
+);
 
 void keyboard_post_init_user(void) {
-  #ifdef RGBLIGHT_ENABLE
-  rgblight_sethsv_noeeprom_azure();
-  #endif //RGBLIGHT_ENABLE
+    // Enable the LED layers
+    rgblight_layers = rgb_layers;
 }
 
-void led_set_user(uint8_t usb_led) {
+bool led_update_user(led_t led_state) {
+    rgblight_set_layer_state(5, led_state.caps_lock);
+    return true;
+}
+
+layer_state_t default_layer_state_set_user(layer_state_t state) {
+    rgblight_set_layer_state(0, layer_state_cmp(state, 0));
+    return state;
+}
+
+layer_state_t layer_state_set_user(layer_state_t state) {
+    rgblight_set_layer_state(1, layer_state_cmp(state, 1));
+    rgblight_set_layer_state(2, layer_state_cmp(state, 2));
+    rgblight_set_layer_state(3, layer_state_cmp(state, 3));
+    // rgblight_set_layer_state(4, layer_state_cmp(state, 4));
+    return state;
 }

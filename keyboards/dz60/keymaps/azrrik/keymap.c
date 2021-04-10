@@ -1,12 +1,3 @@
-// using as reference
-// https://docs.qmk.fm/#/keymap
-
-// thanks to atlacat, hailbreno, itsaferbie and weeheavy...
-
-// and special thanks to  AGausmann and drashna for the layer-activated RGB underglow
-// https://www.reddit.com/r/olkb/comments/6t1vdu/update_layeractivated_rgb_underglow/
-// https://github.com/AGausmann/qmk_firmware/blob/agausmann-v3.x/keyboards/nyquist/keymaps/agausmann/keymap.c
-
 #include QMK_KEYBOARD_H
 
 #define _______ KC_TRNS
@@ -66,7 +57,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     _______,  KC_F1,    KC_F2,    KC_F3,    KC_F4,    KC_F5,    KC_F6,    KC_F7,    KC_F8,    KC_F9,    KC_F10,   KC_F11,   KC_F12,   _______,  _______,
     _______,  _______,  _______,  _______,  _______,  _______,  _______,  KC_HOME,  KC_UP,    KC_END,   KC_PGUP,  _______,  _______,  _______,
     _______,  KC_LSFT,  KC_LGUI,  KC_LALT,  KC_LCTL,  _______,  _______,  KC_LEFT,  KC_DOWN,  KC_RIGHT, KC_PGDN,  _______,  _______,
-    _______,  UNDO,     CUT,      COPY,     PASTE,    _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,
+    _______,  _______,  UNDO,     CUT,      COPY,     PASTE,    _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,
     _______,  _______,  _______,  _______,  _______,  KC_DEL,   _______,  _______,  _______,  _______,  _______
   ),
   /* layer 2 - mouse
@@ -117,9 +108,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
    * ├─────┴┬──┴┬──┴┬──┴┬──┴┬──┴┬──┴┬──┴┬──┴┬──┴┬──┴┬──┴┬──┴─────┤
    * │      │   │   │   │   │   │   │   │   │   │   │   │        │
    * ├────┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴───┴┬───┬───┤
-   * │    │   │   │   │   │   │   │   │   │   │   │      |   │   │
+   * │    │   │   │   │   │   │   │   │   │   │   │      |mod│   │
    * ├────┼───┴┬──┴─┬─┴───┴──┬┴───┼───┴───┴──┬┴──┬┴──┬───┼───┼───┤
-   * │    │    │    │        │    │          │   │   │   │   │   │
+   * │    │    │    │        │    │          │   │tog│hui│sai│vai│
    * └────┴────┴────┴────────┴────┴──────────┴───┴───┴───┴───┴───┘
   */
   [4] = LAYOUT_AZ(
@@ -133,7 +124,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 // layer-activated RGB underglow
 const rgblight_segment_t PROGMEM capslock_layer[] = RGBLIGHT_LAYER_SEGMENTS(
-    {0, 8, 0, 200, 200}
+    {0, 3, 0, 200, 200},
+    {14, 3, 0, 200, 200}
 );
 const rgblight_segment_t PROGMEM layer0[] = RGBLIGHT_LAYER_SEGMENTS(
     {0, 16, 11, 176, 200}
@@ -148,7 +140,8 @@ const rgblight_segment_t PROGMEM layer3[] = RGBLIGHT_LAYER_SEGMENTS(
     {0, 16, 106, 255, 200}
 );
 const rgblight_segment_t PROGMEM layer4[] = RGBLIGHT_LAYER_SEGMENTS(
-    {0, 16, 43, 255, 200}
+    {0, 16, 43, 255, 200
+    }
 );
 
 // Now define the array of layers. Later layers take precedence
@@ -172,6 +165,7 @@ bool led_update_user(led_t led_state) {
 }
 
 layer_state_t default_layer_state_set_user(layer_state_t state) {
+    // TODO - reflash with this uncommented
     // rgblight_set_layer_state(0, layer_state_cmp(state, 0));
     return state;
 }
