@@ -25,7 +25,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #define NO_ACTION_FUNCTION
 
 #define RGBLIGHT_LAYERS
-#define RGBLIGHT_EFFECT_BREATHING
+#define RGBLIGHT_ANIMATIONS
 #define MAX_LAYER 6
 
 /* Use I2C or Serial, not both */
